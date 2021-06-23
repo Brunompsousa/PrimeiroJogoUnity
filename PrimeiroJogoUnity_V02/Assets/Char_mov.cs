@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Char_mov : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class Char_mov : MonoBehaviour
     Vector2 moveDir; //Posicao para onde queremos que a personagem se mova
 
     Vector2 mousePos;
+
+    public gameovermenu goscreen;
 
 
     // Update is called once per frame
@@ -33,11 +36,11 @@ public class Char_mov : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log(collision.collider.name);
+        //Debug.Log(collision.collider.name);
         if (collision.collider.tag == "Enemy")
         {
-            Debug.Log("DIE");
-            FindObjectOfType<gameovermenu>().Gameover();
+            //Debug.Log("DIE");
+            goscreen.Gameover();
         }
     }
 }

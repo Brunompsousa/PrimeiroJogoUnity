@@ -14,10 +14,13 @@ ScriptsOnlyBuild:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.IK.Editor.dll:
     - UnityEditor.U2D.IK.IKEditorManager
+    - UnityEditor.U2D.IK.IKGizmos
     Unity.2D.IK.Runtime.dll:
     - UnityEditor.U2D.IK.IKEditorManagerHelper
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridPaintingState
+    - UnityEditor.Tilemaps.GridPaletteBrushes
+    - UnityEditor.Tilemaps.GridPalettes
     - UnityEditor.Tilemaps.SceneViewGridManager
     - UnityEditor.Tilemaps.SceneViewOpenTilePaletteHelper
     - UnityEditor.Tilemaps.TileDragAndDropManager
@@ -301,7 +304,7 @@ ScriptsOnlyBuild:
     className: TextMeshProUGUI
   - hash:
       serializedVersion: 2
-      Hash: 125a23b673be4c50b89c06f7e4b9cbe5
+      Hash: d7f3005f3ebc374a00ee92a3a2c1ca96
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Showscore
@@ -385,7 +388,7 @@ ScriptsOnlyBuild:
     className: MarkerTrack
   - hash:
       serializedVersion: 2
-      Hash: 2819fb6f13648229212640628ef3d617
+      Hash: 92a9fe7e585e7f4cf48c03b51d76b06a
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Char_mov
@@ -655,7 +658,7 @@ ScriptsOnlyBuild:
     className: Enemy
   - hash:
       serializedVersion: 2
-      Hash: cc3356a24c17da5bbf00f446e0ae28da
+      Hash: d3ed705afa0340c6337ff76d01e66aff
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: spawn
@@ -673,7 +676,7 @@ ScriptsOnlyBuild:
     className: ActivationPlayableAsset
   - hash:
       serializedVersion: 2
-      Hash: 1dd4007cc5679b4740122dff3e670aa1
+      Hash: a9efba8f8c2c1b2485fe56c6c014a20b
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: gameovermenu
@@ -698,4 +701,4 @@ ScriptsOnlyBuild:
   platform: 19
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
-  playerPath: C:/Users/Brums/Desktop/1vsAll/1vAll.exe
+  playerPath: C:/Users/Brums/Desktop/1vALL v0.2/1vAll.exe

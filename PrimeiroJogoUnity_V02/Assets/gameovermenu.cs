@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class gameovermenu : MonoBehaviour
 {
@@ -9,12 +10,16 @@ public class gameovermenu : MonoBehaviour
 
     public GameObject GOmenuUI;
 
+    public Text Score;
+
     public void Gameover()
     {
         if(Gamefim == false)
         {
             GOmenuUI.SetActive(true);
             Time.timeScale = 0f;
+            //Debug.Log(Showscore.score.ToString());
+            Score.text = "Pontuação: " + Showscore.score;
             Gamefim = true;
         }    
     }
@@ -24,6 +29,7 @@ public class gameovermenu : MonoBehaviour
         SceneManager.LoadScene("SampleScene");
         Time.timeScale = 1f;
         Gamefim = false;
+        MainmenuUI.Mainmenu = true;
     }
 
 }

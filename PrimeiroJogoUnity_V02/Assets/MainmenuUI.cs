@@ -27,6 +27,7 @@ public class MainmenuUI : MonoBehaviour
     {
         MainUI.SetActive(false);
         Time.timeScale = 1f;
+        Mainmenu = false;
     }
 
     public void QuitGame()

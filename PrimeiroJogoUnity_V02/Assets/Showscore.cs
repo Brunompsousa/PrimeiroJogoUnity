@@ -8,12 +8,15 @@ public class Showscore : MonoBehaviour
 {
 
     public Text myscore;
-    public static int score; 
+    public static int score;
+    public Text lvl;
+
 
     // Start is called before the first frame update
     void Start()
     {
         score = 0;
+        lvl.text = "Nivel 1";
     }
 
     // Update is called once per frame
@@ -21,14 +24,16 @@ public class Showscore : MonoBehaviour
     {
         myscore.text = score.ToString();
 
-        float.TryParse(myscore.text, out float scr);
+        //Old system for lvlup dificulty
+        /*float.TryParse(myscore.text, out float scr);
 
         float res =  Mathf.Round(scr / 100);
 
-        if (res >= 3)
-        {
-            spawn.dificulty = (int)res;
-        }
+        //Debug.Log("lvl");
+        if(res >= 2)
+            lvl.text = "Nivel " + res;
 
+        if (res >= 3)
+            spawn.dificulty = (int)res;*/
     }
 }
