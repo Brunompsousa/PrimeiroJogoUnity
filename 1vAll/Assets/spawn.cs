@@ -7,7 +7,7 @@ public class spawn : MonoBehaviour
 {
     public Text Nivel;              //Ligacao para o texto onde escrevemos o nivel no UI
     public Transform[] spawnPoints; //Array para guardar todos os pontos em que os inimigos podem aparecer
-    public GameObject enemy;        //Objecto do tipo inimigo para que possamos inicializar os inimigos em jogo
+    public GameObject[] enemy;        //Objecto do tipo inimigo para que possamos inicializar os inimigos em jogo
 
     public static int dificulty;    //Variavel para a dificuldade, static para podermos acessar de outras classes
 
@@ -15,6 +15,8 @@ public class spawn : MonoBehaviour
     public float timeLvlUp = 15f;   //Tempo inicial para o primeiro nivel
     public float countdownSpawn;    //Contagem do tempo para o aparecimento dos inimigo
     public float countdownLvl;      //Contagem para a mudança de nivel/dificuldade
+
+    int randspaw, randEnem;
 
     // Start is called before the first frame update
     void Start()
@@ -52,10 +54,13 @@ public class spawn : MonoBehaviour
 
     void spawnerfun()
     {
-        for(int i = 0; i<dificulty+1 ;i++)
+        if(dificulty < 3)
         {
-            int randspaw = Random.Range(0, spawnPoints.Length);
-            Instantiate(enemy, spawnPoints[randspaw].position, transform.rotation);
+            spawnenemis(1);
+        }
+        else
+        {
+            spawnenemis(0);
         }
     }
 
@@ -74,6 +79,16 @@ public class spawn : MonoBehaviour
         countdownSpawn = timespawn;
         countdownLvl = timeLvlUp;
         spawnerfun();
+    }
+
+    public void spawnenemis(int dif)
+    {
+        for (int i = 0; i < dificulty + 1; i++)
+        {
+            randspaw = Random.Range(0, spawnPoints.Length);
+            randEnem = Random.Range(0, enemy.Length - dif);
+            Instantiate(enemy[randEnem], spawnPoints[randspaw].position, transform.rotation);
+        }
     }
 
 }

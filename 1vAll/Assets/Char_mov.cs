@@ -40,6 +40,7 @@ public class Char_mov : MonoBehaviour
         if (collision.collider.tag == "Enemy")
         {
             //Debug.Log("DIE");
+            SoundManager.PlaySoundGameover();
             goscreen.Gameover();
         }
     }

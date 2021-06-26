@@ -9,17 +9,21 @@ public class MainmenuUI : MonoBehaviour
     public static bool Mainmenu = true;
 
     public GameObject MainUI;
+    public GameObject ScoreB;
 
     public GameObject plr;
 
     Vector2 originalPos;
 
     public spawn resetspawn;
+
+    public ScoreBoard scrB;
     
 
     // Start is called before the first frame update
     void Start()
     {
+        ScoreB.SetActive(false);
         originalPos = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y);
         Time.timeScale = 0f;
         MainUI.SetActive(true);
@@ -49,6 +53,7 @@ public class MainmenuUI : MonoBehaviour
 
     public void QuitGame()
     {
+        scrB.SaveScores();
         Application.Quit();
     }
 

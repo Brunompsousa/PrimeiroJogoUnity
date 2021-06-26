@@ -11,6 +11,9 @@ public class Enemy : MonoBehaviour
     public Transform target; //target a dar follow
     public float speed = 25f; //velocidade do bicho
 
+    public GameObject deathEffect;
+    public GameObject[] deathEffects;
+
     private void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
@@ -20,7 +23,13 @@ public class Enemy : MonoBehaviour
     {
         vida -= dano;
 
-        if(vida == 0)
+        if (transform.localScale.x > 1)
+        {
+            Vector3 change = new Vector3(1,1,1);
+            transform.localScale -= change;
+        }
+
+        if (vida == 0)
         {
             morre();
         }
@@ -28,8 +37,14 @@ public class Enemy : MonoBehaviour
 
     public void morre()
     {
+        SoundManager.PlaySounddeadEnemy();
+        Instantiate(deathEffect, transform.position,Quaternion.identity);
         Destroy(gameObject);
         Showscore.score += pontos;
+
+        deathEffects = GameObject.FindGameObjectsWithTag("defect");
+        foreach (GameObject defect in deathEffects)
+            Destroy(defect, 0.4f);
     }
 
     void Update()

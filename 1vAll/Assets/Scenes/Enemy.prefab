@@ -174,3 +174,4 @@ MonoBehaviour:
   pontos: 10
   target: {fileID: 0}
   speed: 25
+  deathEffect: {fileID: 4077934260770107971, guid: 296349d8f00152244a4c492f046822ed, type: 3}

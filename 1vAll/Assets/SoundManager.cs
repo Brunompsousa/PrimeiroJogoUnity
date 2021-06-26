@@ -7,6 +7,9 @@ public class SoundManager : MonoBehaviour
 {
 
     public static AudioClip shotSound;
+    public static AudioClip deadSound;
+    public static AudioClip deadEnemy;
+
     static AudioSource audioSrc;
 
     public AudioMixer mixer;
@@ -16,6 +19,8 @@ public class SoundManager : MonoBehaviour
     void Start()
     {
         shotSound = Resources.Load<AudioClip>("shot");
+        deadSound = Resources.Load<AudioClip>("deadsound");
+        deadEnemy = Resources.Load<AudioClip>("deadenemy"); 
 
         audioSrc = GetComponent<AudioSource>();
     }
@@ -29,6 +34,16 @@ public class SoundManager : MonoBehaviour
     public static void PlaySound()
     {
         audioSrc.PlayOneShot(shotSound);
+    }
+
+    public static void PlaySoundGameover()
+    {
+        audioSrc.PlayOneShot(deadSound);
+    }
+
+    public static void PlaySounddeadEnemy()
+    {
+        audioSrc.PlayOneShot(deadEnemy);
     }
 
     public void Soundvol(float vol)
